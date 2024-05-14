@@ -1,0 +1,46 @@
+{
+    "menu": [
+        {
+            "name": "Главная",
+            "icon": "icon ni ni-home-alt",
+            "route": "home",
+            "role": "user"
+        },
+        {
+            "name": "Файлы",
+            "icon": "icon ni ni-file-docs",
+            "route": "files",
+            "role": "user"
+        },
+        {
+            "name": "Избранные",
+            "icon": "icon ni ni-star",
+            "route": "starred",
+            "role": "user"
+        },
+        {
+            "name": "Общие",
+            "icon": "icon ni ni-share-alt",
+            "route": "share.index",
+            "role": "user"
+        },
+        {
+            "name": "Корзина",
+            "icon": "icon ni ni-trash-alt",
+            "route": "recycle.index",
+            "role": "user"
+        },
+        {
+            "name": "Настройки",
+            "icon": "icon ni ni-setting-alt",
+            "route": "settings",
+            "role": "user"
+        },
+        {
+            "name": "Пользователи",
+            "icon": "icon ni ni-users",
+            "route": "users.index",
+            "role": "admin"
+        }
+    ]
+}
