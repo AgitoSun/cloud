@@ -3,8 +3,8 @@
 @section('title', 'Файлы')
 
 @section('content')
-    @include('layouts/search')
-    @include('layouts/modal/directory-create')
+{{--    @include('layouts/search')--}}
+{{--    @include('layouts/modal/directory-create')--}}
 {{--    <div class="nk-fmg-body-content">--}}
 {{--        <div class="nk-block-head nk-block-head-sm">--}}
 {{--            <div class="nk-block-between position-relative">--}}
@@ -232,9 +232,9 @@
 {{--            </div>--}}
 {{--        </div>--}}
 {{--    </div>--}}
-    @include('layouts/modal/file-move')
-    @include('layouts/modal/file-rename')
+{{--    @include('layouts/modal/file-move')--}}
+{{--    @include('layouts/modal/file-rename')--}}
 @endsection
-@section('script')
-    <script src="{{ Vite::asset('resources/assets/js/apps/file-modal.js') }}"></script>
-@endsection
+{{--@section('script')--}}
+{{--    <script src="{{ Vite::asset('resources/assets/js/apps/file-modal.js') }}"></script>--}}
+{{--@endsection--}}
