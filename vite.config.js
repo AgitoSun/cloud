@@ -14,6 +14,7 @@ export default defineConfig({
                 'resources/assets/js/scripts.js',
                 'resources/assets/js/demo-settings.js',
                 'resources/assets/js/apps/file-manager.js',
+                'resources/assets/js/apps/file-modal.js',
             ],
             refresh: true,
         }),
