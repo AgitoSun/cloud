@@ -232,6 +232,7 @@
             </div>
         </div>
     </div>
+    <button type="button">Test jQuery Code</button>
     @include('layouts/modal/file-move')
     @include('layouts/modal/file-rename')
 @endsection

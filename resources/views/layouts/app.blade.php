@@ -24,7 +24,6 @@
 @include('layouts/modal/file-share')
 @include('layouts/modal/file-details')
 @include('layouts/modal/file-upload')
-<script src="{{ Vite::asset('resources/assets/js/bundle.js') }}"></script>
 @include('layouts/scripts')
 @yield('script')
 </body>
