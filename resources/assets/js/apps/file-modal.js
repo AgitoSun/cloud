@@ -13,3 +13,6 @@ buttons.forEach(currentButton => {
         $modal.modal('show');
     });
 });
+
+var now = new Date();
+alert( now );
