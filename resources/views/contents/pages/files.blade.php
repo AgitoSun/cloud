@@ -235,6 +235,6 @@
     @include('layouts/modal/file-move')
     @include('layouts/modal/file-rename')
 @endsection
-{{--@section('script')--}}
-{{--    <script src="{{ Vite::asset('resources/assets/js/apps/file-modal.js') }}"></script>--}}
-{{--@endsection--}}
+@section('script')
+    <script src="{{ Vite::asset('resources/assets/js/apps/file-modal.js') }}"></script>
+@endsection
