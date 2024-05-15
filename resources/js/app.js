@@ -1,6 +1,6 @@
 import './bootstrap';
-import './bundle';
-import '../assets/js/scripts.js';
+// import './bundle';
+import '../assets/js/scripts';
 
 import Alpine from 'alpinejs';
 
