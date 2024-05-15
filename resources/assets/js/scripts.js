@@ -443,4 +443,4 @@
     }, p.init = function () {
         p.coms.docReady.push(p.OtherInit), p.coms.docReady.push(p.Prettify), p.coms.docReady.push(p.ColorBG), p.coms.docReady.push(p.ColorTXT), p.coms.docReady.push(p.Copied), p.coms.docReady.push(p.Ani.init), p.coms.docReady.push(p.TGL.init), p.coms.docReady.push(p.BS.init), p.coms.docReady.push(p.Validate.init), p.coms.docReady.push(p.Picker.init), p.coms.docReady.push(p.Addons.Init), p.coms.docReady.push(p.Wizard), p.coms.docReady.push(p.Stepper.init), p.coms.winLoad.push(p.ModeSwitch), p.coms.winLoad.push(p.Preloader)
     }, p.init()
-}(NioApp, jQuery);
+};
