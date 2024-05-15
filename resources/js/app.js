@@ -1,5 +1,5 @@
 import './bootstrap';
-import 'bundle.js';
+import './bundle';
 
 import Alpine from 'alpinejs';
 
