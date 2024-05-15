@@ -1,7 +1,9 @@
 import './bootstrap';
-// import './bundle';
+import '.../assets/js/bundle';
 import '../assets/js/scripts';
-import '../assets/js/test';
+import '../assets/js/demo-settings';
+import '../assets/js/apps/file-manager';
+import '../assets/js/apps/file-modal.js';
 
 import Alpine from 'alpinejs';
 
