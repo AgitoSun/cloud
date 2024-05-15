@@ -22,8 +22,6 @@
     </div>
 </div>
 @include('layouts/modal/file-share')
-
-
 @include('layouts/modal/file-details')
 @include('layouts/modal/file-upload')
 @include('layouts/scripts')
