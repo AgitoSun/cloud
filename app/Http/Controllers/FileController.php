@@ -12,13 +12,15 @@ class FileController extends Controller
 {
     public function index()
     {
-        $directories = Directory::all()->where('directory_id', null)->where('user_id', Auth::id());
-        $files = File::all()->where('directory_id', null)->where('user_id', Auth::id());
+//        $directories = Directory::all()->where('directory_id', null)->where('user_id', Auth::id());
+//        $files = File::all()->where('directory_id', null)->where('user_id', Auth::id());
+//
+//        return \response()->view('contents.pages.files', compact([
+//            'files',
+//            'directories',
+//        ]));
 
-        return \response()->view('contents.pages.files', compact([
-            'files',
-            'directories',
-        ]));
+        return \response()->view('contents.pages.files');
     }
 
     public function upload(Request $request)
