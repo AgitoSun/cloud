@@ -4,7 +4,7 @@
 
 @section('content')
 @include('layouts/search')
-<a href="{{ route('test') }}">test</a>
+{{--<a href="{{ route('test') }}">test</a>--}}
 <div class="nk-fmg-body-content">
     <div class="nk-block-head nk-block-head-sm">
         <div class="nk-block-between position-relative">
