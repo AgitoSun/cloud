@@ -1,6 +1,6 @@
 import './bootstrap';
-import './js/bundle';
-import './js/scripts';
+import './bundle';
+import './scripts';
 // import '../assets/js/demo-settings';
 // import '../assets/js/apps/file-manager';
 // import '../assets/js/apps/file-modal';
