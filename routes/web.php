@@ -66,7 +66,7 @@ Route::middleware('auth')->group(function () {
 //    })->name('recycle');
 
     Route::get('/settings', function () {
-        return view('contents/pages/settings');
+        return view('contents/pages/test');
     })->name('settings');
 });
 
