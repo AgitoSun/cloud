@@ -151,5 +151,5 @@
 @include('layouts/modal/file-rename')
 @endsection
 @section('script')
-    <script src="{{ Vite::asset('resources/assets/js/apps/file-modal.js') }}"></script>
+    <script src="{{ asset('js/file-modal.js') }}"></script>
 @endsection
