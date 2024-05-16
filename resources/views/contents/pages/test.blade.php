@@ -3189,7 +3189,7 @@
     <div class="pmo-st-text">Looking for Advanced <br> Investment Platform?</div>
 </a>
 @vite('resources/js/app.js')
-<script src="js/bundle.js"></script>
-<script src="js/scripts.js"></script>
+{{--<script src="js/bundle.js"></script>--}}
+{{--<script src="js/scripts.js"></script>--}}
 </body>
 </html>
