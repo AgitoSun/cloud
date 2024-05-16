@@ -1,5 +1,5 @@
 import './bootstrap';
-// import './bundle';
+import './bundle';
 // import './scripts';
 // import '../assets/js/demo-settings';
 // import '../assets/js/apps/file-manager';
