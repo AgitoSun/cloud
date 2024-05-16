@@ -34,7 +34,6 @@
                             </li>
                         @endcan
                     @endif
-
                 @endforeach
             </ul>
         </div>

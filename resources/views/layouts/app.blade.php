@@ -24,6 +24,7 @@
 @include('layouts/modal/file-share')
 @include('layouts/modal/file-details')
 @include('layouts/modal/file-upload')
+@vite('resources/js/app.js')
 @include('layouts/scripts')
 @yield('script')
 </body>

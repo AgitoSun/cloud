@@ -7,5 +7,5 @@
     <link rel="stylesheet" href="{{ Vite::asset('resources/assets/css/dashlite.css') }}">
     <link id="skin-default" rel="stylesheet" href="{{ Vite::asset('resources/assets/css/theme.css') }}">
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-91615293-4"></script>
-    @vite('resources/js/app.js')
+{{--    @vite('resources/js/app.js')--}}
 </head>
