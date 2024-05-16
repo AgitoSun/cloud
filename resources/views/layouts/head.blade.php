@@ -6,5 +6,4 @@
     <title>@yield('title') | ДИАС - Файловый менеджер</title>
     <link rel="stylesheet" href="{{ Vite::asset('resources/assets/css/dashlite.css') }}">
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-91615293-4"></script>
-{{--    @vite('resources/js/app.js')--}}
 </head>
