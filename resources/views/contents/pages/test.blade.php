@@ -3188,8 +3188,8 @@
     <div class="pmo-st-img"><img src="../../dashlite.net/images/landing/promo-investorm.png" alt="Investorm"></div>
     <div class="pmo-st-text">Looking for Advanced <br> Investment Platform?</div>
 </a>
-@vite('resources/js/app.js')
-{{--<script src="js/bundle.js"></script>--}}
-{{--<script src="js/scripts.js"></script>--}}
+{{--@vite('resources/js/app.js')--}}
+<script src="{{ asset('js/bundle.js') }}"></script>
+<script src="{{ asset('js/scripts.js') }}"></script>
 </body>
 </html>
