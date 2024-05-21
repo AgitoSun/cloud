@@ -49,24 +49,12 @@ Route::middleware('auth')->group(function () {
         return view('contents/pages/home');
     })->name('home');
 
-    //Route::get('/files', function () {
-    //    return view('contents/pages/files');
-    //})->name('files');
-
     Route::get('/starred', function () {
         return view('contents/pages/starred');
     })->name('starred');
 
-//    Route::get('/shared', function () {
-//        return view('contents/pages/shared');
-//    })->name('shared');
-
-//    Route::get('/recycle', function () {
-//        return view('contents/pages/recycle');
-//    })->name('recycle');
-
     Route::get('/settings', function () {
-        return view('contents/pages/test');
+        return view('contents/pages/settings');
     })->name('settings');
 });
 
@@ -84,9 +72,5 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
-Route::get('/test', function () {
-    return view('contents/pages/test');
-})->name('test');
 
 require __DIR__.'/auth.php';
