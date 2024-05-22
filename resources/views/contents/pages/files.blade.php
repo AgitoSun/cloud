@@ -150,7 +150,6 @@
                                     <div class="nk-file-info">
                                         <div class="nk-file-title">
                                             {{ \App\Helpers\FilesConvert::fileIcon($file->path) }}
-                                            {{ Storage::mimeType($file->path) }}
                                             <div class="nk-file-name">
                                                 <div class="nk-file-name-text">
                                                     <a href="#" class="title">{{ $file->name }}</a>
