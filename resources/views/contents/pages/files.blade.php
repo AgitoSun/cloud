@@ -232,10 +232,10 @@
 {{--            </div>--}}
 {{--        </div>--}}
 {{--    </div>--}}
-    @include('layouts/modal/file-upload')
-    @include('layouts/modal/file-details')
-    @include('layouts/modal/file-move')
-    @include('layouts/modal/file-rename')
+{{--    @include('layouts/modal/file-upload')--}}
+{{--    @include('layouts/modal/file-details')--}}
+{{--    @include('layouts/modal/file-move')--}}
+{{--    @include('layouts/modal/file-rename')--}}
 @endsection
 @section('script')
     <script src="{{ asset('js/file-modal.js') }}"></script>
