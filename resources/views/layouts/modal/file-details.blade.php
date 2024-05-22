@@ -3,10 +3,10 @@
         <div class="modal-content">
             <div class="modal-header align-center">
                 <div class="nk-file-title">
-                    {{ \App\Helpers\FilesConvert::fileIcon($file->path) }}
+{{--                    {{ \App\Helpers\FilesConvert::fileIcon($file->path) }}--}}
                     <div class="nk-file-name">
                         <div class="nk-file-name-text">
-                            <span class="title">{{ $file->name }}</span>
+{{--                            <span class="title">{{ $file->name }}</span>--}}
                         </div>
                     </div>
                 </div>
