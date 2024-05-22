@@ -8,9 +8,9 @@
                 <div class="modal-body modal-body-md">
                     <form>
                         <div class="form-group">
-{{--                            <label class="form-label" for="modalTitle" id="modalTitle">Имя файла {{ $file->name }}</label>--}}
                             <div class="form-control-wrap">
-                                <input name="name" type="text" class="form-control" id="input-name" value="{{ $file->name }}">
+                                <label class="form-label" for="input-name">Имя файла</label>
+                                <input name="name" type="text" class="form-control" id="input-name">
                             </div>
                         </div>
                         <div class="nk-modal-action justify-end">

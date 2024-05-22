@@ -69,10 +69,14 @@ class FilesConvert
             if ($ext)
             {
                 $mimes = [
-                    'application/x-dosexec' => 'application',
-                    'image/png' => 'media',
-                    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' => 'sheet',
+                    'application/x-dosexec' => 'exe',
+                    'image/png' => 'png',
+                    'image/jpeg' => 'jpeg',
+                    'application/vnd.ms-excel' => 'xls',
+                    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' => 'xlsx',
                     'application/zip' => 'zip',
+                    'application/x-rar' => 'rar',
+                    'application/pdf' => 'pdf',
                 ];
 
                 if (isset($mimes[$ext]))

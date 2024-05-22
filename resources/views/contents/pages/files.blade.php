@@ -150,6 +150,7 @@
                                     <div class="nk-file-info">
                                         <div class="nk-file-title">
                                             {{ \App\Helpers\FilesConvert::fileIcon($file->path) }}
+                                            {{ Storage::mimeType($file->path) }}
                                             <div class="nk-file-name">
                                                 <div class="nk-file-name-text">
                                                     <a href="#" class="title">{{ $file->name }}</a>
@@ -182,7 +183,7 @@
                                             <div class="dropdown-menu dropdown-menu-end">
                                                 <ul class="link-list-plain no-bdr">
                                                     <li>
-                                                        <a href="#file-details" data-bs-toggle="modal">
+                                                        <a href="#" class="js-btn" data-name="{{ $file->id }}" data-modal="#file-details">
                                                             <em class="icon ni ni-eye"></em>
                                                             <span>Подробнее</span>
                                                         </a>
@@ -232,6 +233,8 @@
             </div>
         </div>
     </div>
+    @include('layouts/modal/file-upload')
+    @include('layouts/modal/file-details')
     @include('layouts/modal/file-move')
     @include('layouts/modal/file-rename')
 @endsection
