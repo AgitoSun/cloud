@@ -1,5 +1,3 @@
-<h5 class="modal-title" id="modalTitle"></h5>
-
 <div class="modal fade" tabindex="-1" role="dialog" id="file-details">
     <div class="modal-dialog modal-md" role="document">
         <div class="modal-content">
