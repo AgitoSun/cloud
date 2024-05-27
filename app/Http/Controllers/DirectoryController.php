@@ -28,17 +28,36 @@ class DirectoryController extends Controller
 
     public function store(Request $request)
     {
-        $directories = Directory::all();
-        $directory = $directories->find($request->directory);
-
+        $directory = Directory::find($request->directory);
+        $directories = Directory::all()->where('user_id', Auth::id());
         $user_folder = stristr(Auth::user()['email'], '@', true);
+
         if ($directory)
         {
+            $all_directories = $directories->where('directory_id', $directory->id);
+
+            foreach ($all_directories as $all_directory)
+            {
+                if ($all_directory->name == $request->name)
+                {
+                    return redirect()->back()->with('error', 'Папка с таким именем уже существует');
+                }
+            }
+
             $path = $directory->path.'/'.$request->name;
         } else {
+            $all_directories = $directories->where('directory_id', null);
+
+            foreach ($all_directories as $all_directory)
+            {
+                if ($all_directory->name == $request->name)
+                {
+                    return redirect()->back()->with('error', 'Папка с таким именем уже существует');
+                }
+            }
+
             $path = 'private/'.$user_folder.'/'.$request->name;
         }
-
 
         Storage::makeDirectory($path);
 
@@ -68,9 +87,8 @@ class DirectoryController extends Controller
 
     public function destroy(Directory $directory)
     {
-        $directories = Directory::all()->where('directory_id', $directory->id);
-        $files = File::all()->where('directory_id', $directory->id);
-
+        $directories = Directory::all()->where('user_id', Auth::id())->where('directory_id', $directory->id);
+        $files = File::all()->where('user_id', Auth::id())->where('directory_id', $directory->id);
 
         if (!$files->isEmpty() || !$directories->isEmpty())
         {

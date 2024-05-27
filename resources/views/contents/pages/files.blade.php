@@ -4,6 +4,7 @@
 
 @section('content')
     @include('layouts/search')
+    <x-alert></x-alert>
     @include('layouts/modal/directory-create')
     <div class="nk-fmg-body-content">
         <div class="nk-block-head nk-block-head-sm">
@@ -129,10 +130,10 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <form id="directory-destroy" action="{{ route('directory.destroy', $main_directory->id) }}" method="post">
+                                                <form id="directory-destroy-{{ $main_directory->id }}" action="{{ route('directory.destroy', $main_directory->id) }}" method="post">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <a href="javascript:{}" onclick="document.getElementById('directory-destroy').submit(); confirm('Вы уверены?');">
+                                                    <a href="javascript:{}" onclick="document.getElementById('directory-destroy-{{ $main_directory->id }}').submit(); confirm('Вы уверены?');">
                                                         <em class="icon ni ni-trash"></em>
                                                         <span>Удалить</span>
                                                     </a>
@@ -212,10 +213,10 @@
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <form id="file-destroy" action="{{ route('file.destroy', $file->id) }}" method="post">
+                                                        <form id="file-destroy-{{ $file->id }}" action="{{ route('file.destroy', $file->id) }}" method="post">
                                                             @csrf
                                                             @method('DELETE')
-                                                            <a href="javascript:{}" onclick="document.getElementById('file-destroy').submit(); confirm('Вы уверены?');">
+                                                            <a href="javascript:{}" onclick="document.getElementById('file-destroy-{{ $file->id }}').submit(); confirm('Вы уверены?');">
                                                                 <em class="icon ni ni-trash"></em>
                                                                 <span>Удалить</span>
                                                             </a>
@@ -239,4 +240,5 @@
 @endsection
 @section('script')
     <script src="{{ asset('js/file-modal.js') }}"></script>
+    <script src="{{ asset('js/demo-settings.js') }}"></script>
 @endsection

@@ -19,38 +19,52 @@ class FileController extends Controller
             'files',
             'directories',
         ]));
-
-//        return \response()->view('contents.pages.files');
     }
 
     public function upload(Request $request)
     {
         $file = $request->file('file');
-        $directories = Directory::all();
-        $directory = $directories->find($request->directory);
+        $directory = Directory::find($request->directory);
+        $all_files = File::all()->where('user_id', Auth::id());
 
-        if (!empty($file))
+        $user_folder = stristr(Auth::user()['email'], '@', true);
+        $file_name = $file->getClientOriginalName();
+
+        if ($directory)
         {
-            $user_folder = stristr(Auth::user()['email'], '@', true);
-            $file_name = $file->getClientOriginalName();
-
-            if ($directory)
+            $all_files = $all_files->where('directory_id', $directory->id);
+            foreach ($all_files as $all_file)
             {
-                $path = $file->storeAs($directory->path, $file_name);
-            } else {
-                $path = $file->storeAs('private/'.$user_folder, $file_name);
+                if ($file_name == $all_file->name)
+                {
+                    return redirect()->back()->with('error', 'Файл с таким именем уже существует');
+                }
             }
 
+            $path = $directory->path;
+        } else {
+            $all_files = $all_files->where('directory_id', null);
+            foreach ($all_files as $all_file)
+            {
+                if ($file_name == $all_file->name)
+                {
+                    return redirect()->back()->with('error', 'Файл с таким именем уже существует');
+                }
+            }
 
-            File::create([
-                'name' => $file_name,
-                'path' => $path,
-                'user_id' => Auth::id(),
-                'directory_id' => $request->directory,
-            ]);
+            $path = 'private/'.$user_folder;
         }
 
-        return redirect()->back();
+        $file->storeAs($path, $file_name);
+
+        File::create([
+            'name' => $file_name,
+            'path' => $path.'/'.$file_name,
+            'user_id' => Auth::id(),
+            'directory_id' => $request->directory,
+        ]);
+
+        return redirect()->back()->with('success', 'Файл добавлен');
     }
 
     public function download(Request $request)
@@ -64,11 +78,23 @@ class FileController extends Controller
         $directory = Directory::find($request->directory);
         $new_path = 'private/'.stristr(Auth::user()['email'], '@', true).'/'.$file->name;
         $directory_id = null;
+        $all_files = File::all()->where('user_id', Auth::id());
 
         if ($request->directory != 0)
         {
+            $all_files = $all_files->where('directory_id', $directory->id);
             $new_path = $directory->path.'/'.$file->name;
             $directory_id = $directory->id;
+        } else {
+            $all_files = $all_files->where('directory_id', null);
+        }
+
+        foreach ($all_files as $all_file)
+        {
+            if ($file->name == $all_file->name)
+            {
+                return redirect()->back()->with('error', 'Файл с таким именем уже существует');
+            }
         }
 
         Storage::move($file->path, $new_path);
@@ -85,10 +111,21 @@ class FileController extends Controller
     {
         $ext = stristr($file->name, '.');
         $new_name = stristr($request->name, '.', true);
+        $all_files = File::all()->where('user_id', Auth::id())->where('directory_id', $file->directory_id);
+
         if (!$new_name)
         {
             $new_name = $request->name;
         }
+
+        foreach ($all_files as $all_file)
+        {
+            if ($new_name.$ext == $all_file->name)
+            {
+                return redirect()->back()->with('error', 'Файл с таким именем уже существует');
+            }
+        }
+
         $new_path = stristr($file->path, $file->name, true).$new_name.$ext;
 
         Storage::move($file->path, $new_path);
@@ -107,15 +144,19 @@ class FileController extends Controller
         {
             $recycle_folder = 'recycle'.stristr($file->path, '/');
             Storage::move($file->path, $recycle_folder);
+
             if ($file->shared)
             {
                 $file->shared->delete();
             }
+
             $file->update([
                 'path' => $recycle_folder,
                 'shared_id' => null
             ]);
+
             $file->delete();
+
             $type = 'success';
             $message = 'Файл '.$file->name.' удален';
         } else {

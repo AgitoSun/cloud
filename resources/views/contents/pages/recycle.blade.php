@@ -127,10 +127,10 @@
                                                                             </a>
                                                                         </li>
                                                                         <li>
-                                                                            <form id="recycle-destroy" action="{{ route('recycle.destroy', $file->id) }}" method="post">
+                                                                            <form id="recycle-destroy-{{ $file->id }}" action="{{ route('recycle.destroy', $file->id) }}" method="post">
                                                                                 @csrf
                                                                                 @method('DELETE')
-                                                                                <a href="javascript:{}" onclick="document.getElementById('recycle-destroy').submit(); confirm('Вы уверены?');">
+                                                                                <a href="javascript:{}" onclick="document.getElementById('recycle-destroy-{{ $file->id }}').submit(); confirm('Вы уверены?');">
                                                                                     <em class="icon ni ni-trash"></em>
                                                                                     <span>Удалить</span>
                                                                                 </a>

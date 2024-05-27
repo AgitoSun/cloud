@@ -74,6 +74,7 @@ class FilesConvert
                     'image/jpeg' => 'jpeg',
                     'application/vnd.ms-excel' => 'xls',
                     'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' => 'xlsx',
+                    'application/vnd.openxmlformats-officedocument.wordprocessingml.document' => 'doc',
                     'application/zip' => 'zip',
                     'application/x-rar' => 'rar',
                     'application/pdf' => 'pdf',

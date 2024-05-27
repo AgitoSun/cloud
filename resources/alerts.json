@@ -1,0 +1,14 @@
+{
+    "alerts": [
+        {
+            "type": "success",
+            "style": "success",
+            "icon": "ni-check-circle"
+        },
+        {
+            "type": "error",
+            "style": "danger",
+            "icon": "ni-cross-circle"
+        }
+    ]
+}

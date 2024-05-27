@@ -90,8 +90,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div>
-                                {{ url('/public?shared='.$file->shared->key) }}
+                            <div class="write-btn" style="cursor: pointer;">
+                                <div class="to-copy">
+                                    {{ url('/public?shared='.$file->shared->key) }}
+                                </div>
                             </div>
                             <div>
                                 {{ \Jenssegers\Date\Date::create($file->shared->created_at)->format('j F Y H:i:s') }}
@@ -152,4 +154,19 @@
 @endsection
 @section('script')
     <script src="{{ asset('js/file-modal.js') }}"></script>
+    <script>
+        const writeBtn = document.querySelector('.write-btn');
+
+        const inputEl = document.querySelector('.to-copy');
+
+        readBtn.addEventListener('click', () => {
+            navigator.clipboard.readText()
+                .then(text => {
+                    resultsEl.innerText = text;
+                })
+                .catch(err => {
+                    console.log('Something went wrong', err);
+                })
+        });
+    </script>
 @endsection
