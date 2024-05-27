@@ -149,34 +149,40 @@
             </div>
         </div>
     </div>
+    <button class="copy">Copy</button>
 </div>
 @include('layouts/modal/file-rename')
 @endsection
 @section('script')
     <script src="{{ asset('js/file-modal.js') }}"></script>
     <script>
-        const writeBtn = document.querySelector('.write-btn');
-
-        const inputEl = document.querySelector('.to-copy');
-
-        writeBtn.addEventListener('click', () => {
-            const inputValue = inputEl.text().trim();
-            if (inputValue) {
-                navigator.clipboard.writeText(inputValue)
-                    .then(() => {
-                        writeBtn.text('');
-                        // if (writeBtn.innerText !== 'Copied!') {
-                        //     const originalText = writeBtn.innerText;
-                        //     writeBtn.innerText = 'Copied!';
-                        //     setTimeout(() => {
-                        //         writeBtn.innerText = originalText;
-                        //     }, 1500);
-                        // }
-                    })
-                    .catch(err => {
-                        console.log('Something went wrong', err);
-                    })
-            }
-        });
+        document.querySelector('.copy').addEventListener('click', e => {
+            navigator.clipboard.writeText("Hi! I'm copied by button")
+                .then(() => console.log("Done!"))
+                .catch(err => console.error(err))
+        })
+        // const writeBtn = document.querySelector('.write-btn');
+        //
+        // const inputEl = document.querySelector('.to-copy');
+        //
+        // writeBtn.addEventListener('click', () => {
+        //     const inputValue = inputEl.text();
+        //     if (inputValue) {
+        //         navigator.clipboard.writeText(inputValue)
+        //             .then(() => {
+        //                 writeBtn.text('');
+        //                 // if (writeBtn.innerText !== 'Copied!') {
+        //                 //     const originalText = writeBtn.innerText;
+        //                 //     writeBtn.innerText = 'Copied!';
+        //                 //     setTimeout(() => {
+        //                 //         writeBtn.innerText = originalText;
+        //                 //     }, 1500);
+        //                 // }
+        //             })
+        //             .catch(err => {
+        //                 console.log('Something went wrong', err);
+        //             })
+        //     }
+        // });
     </script>
 @endsection
